@@ -14,6 +14,8 @@ ROAST = (
 
 
 def main() -> None:
+    assert len(ROAST) <= 140, "entry exceeds 140 characters"
+    assert "\n" not in ROAST and "\r" not in ROAST, "entry must be a single line"
     out_dir = "/output"
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "entry.txt")
